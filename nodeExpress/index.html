@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script>
+    // 创建一个对象
+    var person = {
+        //logisticCode: "3101634954375",
+        transactionId: '9527'
+    }
+
+    $.post("http://192.168.0.100:3000/logisticsQuery", person, function(data, status) {
+        console.log(data.data);
+    });
+    $.post("http://192.168.0.100:3000/bindWaybillId", { transactionId: '9527', logisticCode: '3101634954376' }, function(data, status) {
+        console.log(data.data);
+    });
+    </script>
+</body>
+
+</html>
